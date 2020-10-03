@@ -1,0 +1,29 @@
+
+state={
+	id=797
+	name="STATE_797"
+	manpower = 424712
+	
+	
+	state_category = town
+	
+	resources={
+		steel=20
+	}
+
+
+	history={
+		owner = GRT
+		buildings = {
+			infrastructure = 6
+			arms_factory =1
+			industrial_complex = 3
+			air_base = 1
+			}
+		add_core_of = GRT
+	}
+
+	provinces={
+		12720 10867 2102 12624 12684 10642 12627 1738 12570 1809 12642 11772 7780
+	}
+}

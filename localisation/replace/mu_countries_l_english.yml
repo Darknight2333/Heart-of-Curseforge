@@ -1,0 +1,13 @@
+﻿l_english:
+ GRT_fascism:0 "Gregtech帝国"
+ GRT_fascism_DEF:0 "Gregtech帝国"
+ GRT_democratic:0 "Gregtech共和国"
+ GRT_democratic_DEF:0 "Gregtech共和国"
+ GRT_neutrality:1 "Gregtech"
+ GRT_neutrality_DEF:1 "Gregtech"
+ GRT_communism:0 "Gregtech联盟"
+ GRT_communism_DEF:0 "Gregtech联盟"
+ GRT_fascism_ADJ:0 "Gregtech"
+ GRT_democratic_ADJ:0 "Gregtech"
+ GRT_neutrality_ADJ:0 "Gregtech"
+ GRT_communism_ADJ:0 "Gregtech"

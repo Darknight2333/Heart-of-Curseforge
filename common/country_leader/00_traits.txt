@@ -1,0 +1,11 @@
+leader_traits = {
+	
+	duke_of_gregtech = {
+	
+	stability_factor = 0.15
+	
+	ai_will_do = {
+			factor = 1
+		}
+	}
+}

@@ -1,0 +1,258 @@
+###########################
+# GT/GT5 Events
+###########################
+
+add_namespace = gregtech
+
+#focus event
+
+#union
+
+country_event = {
+	id = gregtech.1
+	title = gregtech.1.title
+	desc = gregtech.1.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = gregtech.1.a
+		
+		add_stability = -0.05
+		add_political_power = -50
+	}
+}
+
+#Speech of the duke of gregtech	
+	
+country_event = {
+	id = gregtech.2
+	title = gregtech.2.title
+	desc = gregtech.2.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+	    name = gregtech.2.a
+		country_event = gregtech.3
+	}
+	hidden_effect = {
+		country_event = {
+		    id = gregtech.9
+			hours = 12
+        }
+    }
+}
+	
+#Speech of the duke of gregtech	hide
+	
+country_event = {
+	id = gregtech.3
+	
+	hidden = yes
+	
+	is_triggered_only = yes
+	
+    option = {
+	    name = gift.1.a
+	    if = { limit = { check_variable = { var = random value = 0.3 compare = less_than_or_equals } }
+             # random <= 0.3
+		    country_event = gregtech.5
+	    else = {
+		    country_event = gregtech.4
+	       }
+	    }
+    }
+}
+	
+#duke gg
+
+country_event = {
+	id = gregtech.4
+	title = gregtech.4.title
+	desc = gregtech.4.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+	    name = gregtech.4.a
+		complete_national_focus = grt_retire
+	}
+}
+
+#duke gogogo
+
+country_event = {
+	id = gregtech.5
+	title = gregtech.5.title
+	desc = gregtech.5.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+	    name = gregtech.5.a
+		complete_national_focus = grt_remain_in_power
+	}
+}
+
+#jqh
+
+country_event = {
+	id = gregtech.6
+	title = gregtech.6.title
+	desc = gregtech.6.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+	    name = gregtech.6.a
+	}
+	option = {
+	    name = gregtech.6.b
+		add_stability = 0.03
+		add_political_power = 30
+	}
+}
+
+#血洗
+country_event = {
+	id = gregtech.7
+	title = gregtech.7.title
+	desc = gregtech.7.desc
+	
+	is_triggered_only = yes
+	
+	option = {
+	    name = gregtech.7.a
+		add_stability = 0.05
+	}
+}
+
+#gtce独立
+
+country_event = {
+	id = gregtech.8
+	title = gregtech.8.title
+	desc = gregtech.8.desc
+
+	is_triggered_only = yes
+
+	immediate = {
+		hidden_effect = {
+			set_global_flag = TEMPORARY_DISABLED_FACTION_POPUP
+			set_global_flag = USA_spawned
+
+			remove_state_core = 386 # 华盛顿
+			remove_state_core = 385 # 俄勒冈
+			remove_state_core = 378 # 加州
+			remove_state_core = 379 # 我操你妈什么东西我不写了
+			remove_state_core = 380
+			remove_state_core = 377
+			remove_state_core = 387
+			remove_state_core = 376
+			remove_state_core = 382
+			add_state_claim = 385
+			add_state_claim = 378
+			add_state_claim = 386
+			add_state_claim = 379
+			add_state_claim = 380
+			add_state_claim = 377
+			add_state_claim = 387
+			add_state_claim = 376
+			add_state_claim = 382
+		
+			USA = {
+				transfer_state = 386
+				transfer_state = 385
+				transfer_state = 378
+				transfer_state = 379
+				transfer_state = 380
+				transfer_state = 377
+				transfer_state = 382
+				transfer_state = 387
+				transfer_state = 376
+				add_state_core = 386
+				add_state_core = 385
+				add_state_core = 378
+				add_state_core = 379
+				add_state_core = 380
+				add_state_core = 377
+				add_state_core = 387
+				add_state_core = 376
+				add_state_core = 382
+				load_oob = USA_1936
+			}
+		}
+		every_state = {
+			limit = {
+				is_claim_or_core_of_ROOT = yes
+				NOT = { is_claimed_by = USA }
+				NOT = { is_core_of = USA }
+			}
+			add_claim_by = USA
+		}
+	}
+	option = { 
+		ai_chance = {
+			factor = 100
+		}
+		name = gregtech.8.a
+		add_political_power = -30
+		add_stability = -0.03
+	}
+	option = { 
+		trigger = {
+			is_ai = no
+		}
+		name = gregtech.8.b
+		hidden_effect = {
+			add_political_power = -30
+			add_stability = -0.03
+			USA = {
+				set_country_flag = choice_made
+				change_tag_from = GRT
+			}
+		}
+	}
+}
+
+#BloodASP宣布不再支持中央政府
+country_event = {
+	id = gregtech.9
+	title = gregtech.9.title
+	desc = gregtech.9.desc
+
+	is_triggered_only = yes
+	option = {
+	    name = gregtech.9.a
+		add_stability = -0.02
+		add_political_power = -10
+	}
+}
+
+#BloodASP进军议会
+country_event = {
+    id = gregtech.10
+	title = gregtech.10.title
+	desc = gregtech.10.desc
+	
+	is_triggered_only = yes
+	option = {
+	    name = gregtech.10.a
+	    create_country_leader = {
+			name = "BloodASP"
+			desc = "POLITICS_LEP_BloodASP_DESC"
+			picture = "gfx/leaders/GRT/Portrait_BloodASP.tga"
+			expire = "1965.1.1"
+			ideology = marxism
+			}
+		add_stability = -0.05
+		add_political_power = -30
+		country_event = gregtech.8
+	}
+}
+
+	
+
+
+	

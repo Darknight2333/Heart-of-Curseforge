@@ -1,0 +1,259 @@
+﻿##### Division Templates #####
+division_template = {
+	name = "格雷联盟国防军"  	# Standard formation for frontline divisions
+
+	division_names_group = GRT_INF_01
+
+	regiments = {
+		infantry = { x = 0 y = 0 }
+		infantry = { x = 0 y = 1 }
+		infantry = { x = 0 y = 2 }
+		infantry = { x = 1 y = 0 }
+		infantry = { x = 1 y = 1 }
+		infantry = { x = 1 y = 2 }
+		infantry = { x = 2 y = 0 }
+		infantry = { x = 2 y = 1 }
+		infantry = { x = 2 y = 2 }
+	}
+	support = {
+		artillery = { x = 0 y = 0 }  
+	}
+}
+
+###### OOB ######
+units = {
+
+	### 1st Army -- note: Armies only paper organizations in 1936 ###
+
+	# 精锐师 #
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 1
+		}
+		location = 3960
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.3
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 27
+		}
+		location = 3960
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 44
+		}
+		location = 1998
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.3
+		start_equipment_factor = 0.9
+
+	}			
+	# III Army Corps #
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 28
+		}
+		location = 9920
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 29
+		}
+		location = 9920
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+
+	### 德克萨斯州驻军 ###
+	# V Army Corps #
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 37
+		}
+		location = 4577
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 38
+		}
+		location = 3972
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	# VI Army Corps #
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 32
+		}
+		location = 12782
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 33
+		}
+		location = 12782
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+
+
+	### 3rd Army -- note: Armies only paper organizations in 1936 ###
+	# IV Army Corps #
+	division = {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 30
+		}
+		location = 10861
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 31
+		}
+		location = 12875
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	# VIII Army Corps #
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 2
+		}
+		location = 5038
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 36
+		}
+		location = 12369
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+	division= {			
+		division_name = {
+			is_name_ordered = yes
+			name_order = 45
+		}
+		location = 12486
+		division_template = "格雷联盟国防军"
+		start_experience_factor = 0.2
+		start_equipment_factor = 0.5
+
+	}			
+}
+	
+	
+air_wings = {
+	### 1 GRTAF Wing -- 德克萨斯
+	378 = {
+		# 7th Bombardment Group 
+		# 19th Bombardment Group 
+		fighter_equipment_0 = {
+			owner = "GRT" 
+			amount = 210
+		}
+		# 17th Attack Group 
+		CAS_equipment_1 = {
+			owner = "GRT" 
+			amount = 100
+		}
+	}
+}
+
+
+#########################
+## STARTING PRODUCTION ##
+#########################
+instant_effect = {
+		
+	add_equipment_production = {
+		equipment = {
+			type = infantry_equipment_1
+			creator = "GRT"
+		}
+		requested_factories = 2
+		progress = 0.1
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = support_equipment_1
+			creator = "GRT" 
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = artillery_equipment_1
+			creator = "GRT" 
+		}
+		requested_factories = 1
+		progress = 0.5
+		efficiency = 50
+	}
+
+	add_equipment_production = {
+		equipment = {
+			type = cv_fighter_equipment_0
+			creator = "GRT" 
+		}
+		requested_factories = 1
+		progress = 0.15
+		efficiency = 50
+	}
+
+}
+#####################

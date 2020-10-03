@@ -1,0 +1,799 @@
+focus_tree = {
+	id = gregtech
+	country = {
+		factor = 0
+		modifier = {
+			add = 10
+			tag = grt
+		}
+	}
+	default = no
+	focus = {
+		id = grt_storm_comes
+		icon = GFX_goal_unknown
+		cost = 3.00
+		x = 6
+		y = 0
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+
+		completion_reward = {
+		country_event = gregtech.1
+		}
+
+	}
+	focus = {
+		id = speech_of_the_duke
+		icon = GFX_goal_unknown
+		cost = 2.00
+		prerequisite = {
+			focus = grt_storm_comes
+		}
+		x = 6
+		y = 1
+		
+		ai_will_do = {
+			factor = 100
+		}
+
+		available_if_capitulated = yes
+		completion_reward = {
+		add_political_power = -10
+		country_event = gregtech.2
+		}
+	}
+	focus = {
+		id = grt_retire
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = speech_of_the_duke
+		}
+		mutually_exclusive = {
+			focus = grt_remain_in_power
+		}
+		x = 6
+		y = 2
+
+	}
+	focus = {
+		id = grt_gunpowder_plot
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = grt_retire
+		}
+		
+		x = 6
+		y = 3
+		completion_reward = {
+		    add_political_power = 50
+			add_stability = 0.15
+			country_event = gregtech.10
+		}
+
+	}
+	focus = {
+		id = grt_new_horizon_plan
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = grt_gunpowder_plot
+		}
+		x = 4
+		y = 4
+		completion_reward = {
+		    add_political_power = 40
+			add_timed_idea = { idea = GRT_new1_horizon_plan days = 548 }
+		}
+
+	}
+	focus = {
+		id = grt_ambition
+		icon = GFX_goal_unknown
+		cost = 5.00
+		prerequisite = {
+			focus = grt_new_horizon_plan
+		}
+		x = 3
+		y = 5
+		completion_reward = {
+		    add_ideas = GRT_dm_ambition
+			797 = {
+                add_extra_state_shared_building_slots = 2	#could add an event chain in the future
+			    add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			}
+		}
+	}
+	focus = {
+		id = grt_absolute_rule_of_bloodasp
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = grt_gunpowder_plot
+		}
+		x = 6
+		y = 4
+		completion_reward = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.10
+			}
+			add_ideas = GRT_absolute_rule
+		}
+	}
+	focus = {
+		id = grt_authoritarian_union
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = grt_absolute_rule_of_bloodasp
+		}
+		x = 5
+		y = 5
+		completion_reward = {
+		    add_stability = 0.05
+            country_event = gregtech.6
+		}
+	}
+	focus = {
+		id = grt_aspism
+		icon = GFX_goal_unknown
+		cost = 4.00
+		prerequisite = {
+			focus = grt_absolute_rule_of_bloodasp
+		}
+		completion_reward = {
+		    add_political_power = 100
+			add_popularity = {
+				ideology = communism
+				popularity = 0.30
+		    }
+		}
+		x = 7
+		y = 5
+
+	}
+	focus = {
+		id = grt_massacre_oppsition 
+		icon = GFX_goal_unknown
+		cost = 3.00
+		prerequisite = {
+			focus = grt_authoritarian_union
+		}
+		prerequisite = {
+			focus = grt_aspism
+		}
+		completion_reward = {
+		    country_event = gregtech.7
+			add_political_power = 80
+			add_manpower = -50000
+		}
+		x = 6
+		y = 6
+
+	}
+	focus = {
+		id = grt_control_factories
+		icon = GFX_goal_unknown
+		cost = 10.00
+		prerequisite = {
+			focus = grt_authoritarian_union
+		}
+		prerequisite = {
+			focus = grt_ambition
+		}
+		x = 4
+		y = 6
+		completion_reward = {
+		    371 = {
+                add_extra_state_shared_building_slots = 2	#could add an event chain in the future
+			    add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			}
+			365 = {
+                add_extra_state_shared_building_slots = 3	#could add an event chain in the future
+			    add_building_construction = {
+				type = arms_factory
+				level = 2
+				instant_build = yes
+				}
+				add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}	
+			}
+        }
+	}
+	focus = {
+		id = grt_soft_hammer
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gunpowder_plot
+		}
+		x = 8
+		y = 4
+
+	}
+	focus = {
+		id = grt_neo_gt5_with_eu_party
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_soft_hammer
+		}
+		x = 9
+		y = 5
+
+	}
+	focus = {
+		id = grt_show_the_crowbar
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_neo_gt5_with_eu_party
+		}
+		prerequisite = {
+			focus = grt_aspism
+		}
+		x = 8
+		y = 6
+
+	}
+	focus = {
+		id = grt_the_first_congress
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_massacre_oppsition 
+		}
+		prerequisite = {
+			focus = grt_show_the_crowbar
+		}
+		prerequisite = {
+			focus = grt_control_factories
+		}
+		x = 6
+		y = 7
+
+	}
+	focus = {
+		id = grt_gtnh
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_the_first_congress
+		}
+		mutually_exclusive = {
+			focus = grt_our_career
+		}
+		x = 6
+		y = 8
+
+	}
+	focus = {
+		id = grt_new_horizon_xfd
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gtnh
+		}
+		x = 9
+		y = 9
+
+	}
+	focus = {
+		id = grt_chief_designer
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gtnh
+		}
+		mutually_exclusive = {
+			focus = grt_new_economic_policy
+		}
+		x = 7
+		y = 9
+
+	}
+	focus = {
+		id = grt_higher_voltage
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_chief_designer
+		}
+		x = 8
+		y = 10
+
+	}
+	focus = {
+		id = grt_dreammasterism
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_new_horizon_xfd
+		}
+		x = 10
+		y = 10
+
+	}
+	focus = {
+		id = grt_five_year_plan_of_union
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_dreammasterism
+		}
+		x = 10
+		y = 11
+
+	}
+	focus = {
+		id = grt_loyalty 
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_five_year_plan_of_union
+		}
+		x = 9
+		y = 12
+
+	}
+	focus = {
+		id = grt_our_career
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_the_first_congress
+		}
+		mutually_exclusive = {
+			focus = grt_gtnh
+		}
+		x = 19
+		y = 8
+
+	}
+	focus = {
+		id = grt_blood
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_our_career
+		}
+		x = 17
+		y = 9
+
+	}
+	focus = {
+		id = grt_reign_of_terror
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_blood
+		}
+		x = 14
+		y = 10
+
+	}
+	focus = {
+		id = grt_political_commissar
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_blood
+		}
+		x = 16
+		y = 10
+
+	}
+	focus = {
+		id = grt_robespierre_of_gt
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_political_commissar
+		}
+		prerequisite = {
+			focus = grt_reign_of_terror
+		}
+		x = 15
+		y = 11
+
+	}
+	focus = {
+		id = grt_alkalus_plan
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_blood
+		}
+		x = 18
+		y = 10
+
+	}
+	focus = {
+		id = grt_great_purge
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_our_career
+		}
+		x = 21
+		y = 9
+
+	}
+	focus = {
+		id = grt_guardian_of_gt
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_great_purge
+		}
+		x = 20
+		y = 10
+
+	}
+	focus = {
+		id = grt_gregtech_intergalatical
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_guardian_of_gt
+		}
+		prerequisite = {
+			focus = grt_alkalus_plan
+		}
+		x = 19
+		y = 11
+
+	}
+	focus = {
+		id = grt_overlord_of_multiblock_machines
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gregtech_intergalatical
+		}
+		x = 17
+		y = 12
+
+	}
+	focus = {
+		id = grt_another_land
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gregtech_intergalatical
+		}
+		x = 21
+		y = 12
+
+	}
+	focus = {
+		id = grt_newmaterial_newtechnology
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_another_land
+		}
+		x = 21
+		y = 13
+
+	}
+	focus = {
+		id = grt_curfew
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_great_purge
+		}
+		x = 22
+		y = 10
+
+	}
+	focus = {
+		id = grt_traitor_die
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_great_purge
+		}
+		x = 24
+		y = 10
+
+	}
+	focus = {
+		id = grt_hongmenyan
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_curfew
+		}
+		prerequisite = {
+			focus = grt_traitor_die 
+		}
+		x = 23
+		y = 11
+
+	}
+	focus = {
+		id = grt_finial_trial
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_hongmenyan
+		}
+		x = 23
+		y = 13
+
+	}
+	focus = {
+		id = grt_virtue
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_robespierre_of_gt
+		}
+		x = 15
+		y = 13
+
+	}
+	focus = {
+		id = grt_energy_core
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_overlord_of_multiblock_machines
+		}
+		x = 17
+		y = 13
+
+	}
+	focus = {
+		id = grt_forever_president_asp
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_energy_core
+		}
+		prerequisite = {
+			focus = grt_newmaterial_newtechnology
+		}
+		prerequisite = {
+			focus = grt_finial_trial
+		}
+		prerequisite = {
+			focus = grt_virtue
+		}
+		x = 19
+		y = 14
+
+	}
+	focus = {
+		id = grt_northern_boundarires
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gtnh
+		}
+		x = 3
+		y = 9
+
+	}
+	focus = {
+		id = grt_remain_in_power
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = speech_of_the_duke
+		}
+		mutually_exclusive = {
+			focus = grt_retire
+		}
+		x = 41
+		y = 2
+
+	}
+	focus = {
+		id = grt_new_economic_policy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gtnh
+		}
+		mutually_exclusive = {
+			focus = grt_chief_designer
+		}
+		x = 5
+		y = 9
+
+	}
+	focus = {
+		id = grt_oldfriend_or_newenemy
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_northern_boundarires
+		}
+		x = 2
+		y = 10
+
+	}
+	focus = {
+		id = grt_velvet
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_oldfriend_or_newenemy
+		}
+		mutually_exclusive = {
+			focus = grt_export_revolution
+		}
+		x = 0
+		y = 11
+
+	}
+	focus = {
+		id = grt_export_revolution
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_oldfriend_or_newenemy
+		}
+		mutually_exclusive = {
+			focus = grt_velvet
+		}
+		x = 2
+		y = 11
+
+	}
+	focus = {
+		id = grt_biotechnology
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_new_economic_policy
+		}
+		x = 4
+		y = 10
+
+	}
+	focus = {
+		id = grt_to_the_space
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_new_economic_policy
+			focus = grt_chief_designer
+		}
+		x = 6
+		y = 10
+
+	}
+	focus = {
+		id = grt_circuit_assembly_line
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_biotechnology
+		}
+		x = 4
+		y = 11
+
+	}
+	focus = {
+		id = grt_military_industrial_complex
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_higher_voltage
+		}
+		x = 8
+		y = 11
+
+	}
+	focus = {
+		id = grt_unity_is_power
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_to_the_space
+		}
+		x = 6
+		y = 11
+
+	}
+	focus = {
+		id = grt_beyond_the_age
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_circuit_assembly_line
+		}
+		prerequisite = {
+			focus = grt_unity_is_power
+		}
+		x = 5
+		y = 12
+
+	}
+	focus = {
+		id = grt_fusion
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_unity_is_power
+		}
+		prerequisite = {
+			focus = grt_military_industrial_complex
+		}
+		x = 7
+		y = 12
+
+	}
+	focus = {
+		id = grt_gtcia
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_export_revolution
+			focus = grt_velvet
+		}
+		x = 3
+		y = 12
+
+	}
+	focus = {
+		id = grt_prestige_belongs_to_master 
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_beyond_the_age
+			focus = grt_fusion
+		}
+		prerequisite = {
+			focus = grt_loyalty 
+		}
+		prerequisite = {
+			focus = grt_gtcia
+		}
+		x = 6
+		y = 13
+
+	}
+	focus = {
+		id = grt_revolution_contines
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_gregtech_intergalatical
+		}
+		x = 19
+		y = 12
+
+	}
+	focus = {
+		id = grt_realize_our_ambition
+		icon = GFX_goal_unknown
+		cost = 0.00
+		prerequisite = {
+			focus = grt_prestige_belongs_to_master 
+		}
+		x = 6
+		y = 14
+
+	}
+}

@@ -1,0 +1,47 @@
+### GRT ideas
+
+ideas = {
+##############
+# Country ideas
+##############
+	country = {
+	
+	    #START#
+		
+		GRT_union_breakdown = {
+			modifier = {
+				political_power_cost = 0.50
+				conscription_factor = -0.50
+				stability_factor = -0.30	
+				war_support_factor = -0.30
+			}
+			
+			picture = FRA_factory_strikes
+		}
+		#focus#
+		GRT_new1_horizon_plan = {
+			modifier = {
+				consumer_goods_factor = -0.1
+				production_speed_buildings_factor = 0.25
+			}
+			
+			picture = FRA_factory_strikes
+		}
+		GRT_dm_ambition = {
+			modifier = {
+				production_speed_buildings_factor = 0.15
+			}
+			
+			picture = FRA_factory_strikes
+		}
+		GRT_absolute_rule = {
+		    modifier = {
+			    war_support_factor = 0.15
+                political_power_gain = 0.15
+                stability_factor = 0.05
+			}
+			
+			picture = FRA_factory_strikes
+	    }
+	}
+}
